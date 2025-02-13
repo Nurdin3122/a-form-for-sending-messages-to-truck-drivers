@@ -4,7 +4,6 @@ import {PlusIcon, ClockIcon, ChevronDoubleDownIcon, BookmarkIcon} from "@heroico
 
 export const App = () => (
     <>
-
         <div className='main-block'>
             <div className='block-image'>
                 <img className='image-silver' src={silver} alt="silver"/>
@@ -139,6 +138,5 @@ export const App = () => (
                 <button className='btn-save'>Save <BookmarkIcon className='btn-save-icon'/></button>
             </div>
         </div>
-
     </>
 );
