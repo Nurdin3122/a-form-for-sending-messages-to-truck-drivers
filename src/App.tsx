@@ -1,6 +1,6 @@
 import './App.css'
 import silver from './assets/silver.jpg';
-import {PlusIcon, ClockIcon, ChevronDoubleDownIcon, BookmarkIcon} from "@heroicons/react/24/outline";
+import {PlusIcon, ClockIcon, BookmarkIcon} from "@heroicons/react/24/outline";
 
 export const App = () => (
     <>
@@ -15,24 +15,24 @@ export const App = () => (
                         <PlusIcon/>
                     </button>
                     <form className='form-pu-de'>
-                        <div className='input-container'>
+                        <div className='input-container shadow'>
                             <ClockIcon className='icon-time'/>
                             <input className='input-time' placeholder='00:00'/>
                         </div>
-                        <div className='btn-container'>
+                        <div className='btn-container shadow'>
                             <button className='btn-word'>until</button>
                         </div>
-                        <div className='input-container'>
+                        <div className='input-container shadow'>
                             <ClockIcon className='icon-time'/>
                             <input className='input-time' placeholder="00:00"/>
                         </div>
-                        <div className='btn-container'>
+                        <div className='btn-container shadow'>
                             <button className='btn-word'>fefs</button>
                         </div>
-                        <div className='btn-container'>
+                        <div className='btn-container shadow'>
                             <button className='btn-word'>appt</button>
                         </div>
-                        <label className='week-container'>
+                        <label className='week-container shadow'>
                             <select className="select-weekday">
                                 <option value="">Choose a day</option>
                                 <option value="monday">Monday</option>
@@ -43,7 +43,6 @@ export const App = () => (
                                 <option value="saturday">Saturday</option>
                                 <option value="sunday">Sunday</option>
                             </select>
-                            <ChevronDoubleDownIcon className='arrow-icon'/>
                         </label>
                     </form>
                 </div>
@@ -55,24 +54,24 @@ export const App = () => (
                         <PlusIcon/>
                     </button>
                     <form className='form-pu-de'>
-                        <div className='input-container'>
+                        <div className='input-container shadow'>
                             <ClockIcon className='icon-time'/>
                             <input className='input-time' placeholder="00:00"/>
                         </div>
-                        <div className='btn-container'>
+                        <div className='btn-container shadow'>
                             <button className='btn-word'>until</button>
                         </div>
-                        <div className='input-container'>
+                        <div className='input-container shadow'>
                             <ClockIcon className='icon-time'/>
                             <input className='input-time' placeholder="00:00"/>
                         </div>
-                        <div className='btn-container'>
+                        <div className='btn-container shadow'>
                             <button className='btn-word'>fefs</button>
                         </div>
-                        <div className='btn-container'>
+                        <div className='btn-container shadow'>
                             <button className='btn-word'>appt</button>
                         </div>
-                        <div className='week-container'>
+                        <div className='week-container shadow'>
                             <select className="select-weekday">
                                 <option value="">Choose a day</option>
                                 <option value="monday">Monday</option>
@@ -83,7 +82,6 @@ export const App = () => (
                                 <option value="saturday">Saturday</option>
                                 <option value="sunday">Sunday</option>
                             </select>
-                            <ChevronDoubleDownIcon className='arrow-icon'/>
                         </div>
                     </form>
                 </div>
@@ -92,25 +90,25 @@ export const App = () => (
                 <form>
                     <div className='form-block-3'>
                         <div className='input-group'>
-                            <div className='input-container'>
+                            <div className='input-container shadow'>
                                 <input className='input-form-block-3' placeholder="Total"/>
                             </div>
-                            <div className='input-container'>
+                            <div className='input-container shadow'>
                                 <input className='input-form-block-3' placeholder="Cost"/>
                             </div>
                         </div>
 
                         <div className='input-group'>
-                            <div className='input-container'>
+                            <div className='input-container shadow'>
                                 <input className='input-form-block-3' placeholder="Dh"/>
                             </div>
-                            <div className='input-container'>
+                            <div className='input-container shadow'>
                                 <input className='input-form-block-3' placeholder="Rpm"/>
                             </div>
                         </div>
 
                         <div className='input-group'>
-                            <div className='input-container'>
+                            <div className='input-container shadow'>
                                 <input className='input-form-block-3' placeholder="Temp"/>
                             </div>
                         </div>
@@ -121,12 +119,12 @@ export const App = () => (
                 <form>
                     <div className='form-2-block-3'>
                         <h3 className='main-text title-form-2-block-3'>Required</h3>
-                        <div className='input-container'>
+                        <div className='input-container shadow'>
                             <input className='input-form-2-block-3'/>
                         </div>
 
                         <h3 className='main-text'>Commodity</h3>
-                        <div className='input-container'>
+                        <div className='input-container shadow'>
                             <input className='input-form-2-block-3'/>
                         </div>
                     </div>
@@ -134,7 +132,7 @@ export const App = () => (
 
 
         </div>
-            <div className='block-btn-save'>
+            <div className='block-btn-save shadow'>
                 <button className='btn-save'>Save <BookmarkIcon className='btn-save-icon'/></button>
             </div>
         </div>
