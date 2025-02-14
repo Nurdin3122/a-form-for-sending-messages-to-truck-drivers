@@ -1,5 +1,5 @@
 import silver from "../../assets/silver.jpg";
-import {BookmarkIcon, ClockIcon, PlusIcon} from "@heroicons/react/24/outline";
+import {BookmarkIcon, ClockIcon, PlusIcon, CalculatorIcon} from "@heroicons/react/24/outline";
 import './MainBlock.css';
 import {UseMainBlock} from "./useMainBlock.ts";
 
@@ -9,6 +9,7 @@ export const MainBlock = () => {
         buttonClickHandler,
         formData,
         updateRpmAndCopy,
+        copyToClipboard,
     } = UseMainBlock();
     console.log(formData)
 
@@ -191,48 +192,35 @@ export const MainBlock = () => {
                         <div className='input-group'>
                             <div className='input-container shadow'>
                                 <input className='input-form-block-3'
-                                       placeholder="Total"
-                                       id='Total'
+                                       placeholder="DH"
+                                       id='DH'
                                        type='number'
-                                       name='Total'
-                                       value={formData.find((block) => block.id === "Block3")?.Total || ""}
-                                       onChange={(e) => inputChangeHandler("Block3", "Total", e.target.value)}
-                                />
-                            </div>
-
-                            <div className='input-container shadow'>
-                                <input className='input-form-block-3'
-                                       placeholder="Cost"
-                                       id='Cost'
-                                       type='number'
-                                       name='Cost'
-                                       value={formData.find((block) => block.id === "Block3")?.Cost || ""}
-                                       onChange={(e) => inputChangeHandler("Block3", "Cost", e.target.value)}
-                                />
-                            </div>
-                        </div>
-
-                        <div className='input-group'>
-                            <div className='input-container shadow'>
-                                <input className='input-form-block-3'
-                                       placeholder="Dh"
-                                       id='Dh'
-                                       type='number'
-                                       name='Dh'
-                                       value={formData.find((block) => block.id === "Block3")?.Dh || ""}
-                                       onChange={(e) => inputChangeHandler("Block3", "Dh", e.target.value)}
+                                       name='DH'
+                                       value={formData.find((block) => block.id === "DH")?.Dh || ""}
+                                       onChange={(e) => inputChangeHandler("DH", "Dh", e.target.value)}
                                 />
                             </div>
 
                             <div className='input-container shadow'>
                                 <input className='input-form-block-3'
                                        placeholder="Rpm"
-                                       id='Rpm'
+                                       id='RPM'
                                        type='number'
-                                       name='Rpm'
-                                       value={formData.find((block) => block.id === "Block3")?.Rpm || ""}
-                                       onChange={(e) => inputChangeHandler("Block3", "Rpm", e.target.value)}
+                                       name='RPM'
+                                       value={formData.find((block) => block.id === "RPM")?.RPM || ""}
+                                       onChange={(e) => inputChangeHandler("RPM", "RPM", e.target.value)}
 
+                                />
+                            </div>
+
+                            <div className='input-container shadow'>
+                                <input className='input-form-block-3'
+                                       placeholder="Temp"
+                                       id='temp'
+                                       type='number'
+                                       name='temp'
+                                       value={formData.find((block) => block.id === "temp")?.Temp || ""}
+                                       onChange={(e) => inputChangeHandler("temp", "Temp", e.target.value)}
                                 />
                             </div>
                         </div>
@@ -240,14 +228,37 @@ export const MainBlock = () => {
                         <div className='input-group'>
                             <div className='input-container shadow'>
                                 <input className='input-form-block-3'
-                                       placeholder="Temp"
-                                       id='Temp'
+                                       placeholder="Total"
+                                       id='total'
                                        type='number'
-                                       name='Temp'
-                                       value={formData.find((block) => block.id === "Block3")?.Temp || ""}
-                                       onChange={(e) => inputChangeHandler("Block3", "Temp", e.target.value)}
+                                       name='total'
+                                       value={formData.find((block) => block.id === "total")?.Total || ""}
+                                       onChange={(e) => inputChangeHandler("total", "Total", e.target.value)}
                                 />
                             </div>
+
+
+                            <div className='input-container shadow'>
+                                <input className='input-form-block-3'
+                                       placeholder="Cost"
+                                       id='cost'
+                                       type='number'
+                                       name='cost'
+                                       value={formData.find((block) => block.id === "cost")?.Cost || ""}
+                                       onChange={(e) => inputChangeHandler("cost", "Cost", e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        <div className='block-btn-calculate'>
+                                <button className='btn-calculate'
+                                        id='btn-cost'
+                                        type='button'
+                                        name='btn-cost'
+                                        onClick={updateRpmAndCopy}
+                                >
+                                    <CalculatorIcon className='calculate-icon'/>
+                                </button>
                         </div>
                     </div>
                 </form>
@@ -256,14 +267,13 @@ export const MainBlock = () => {
                 <form>
                     <div className='form-2-block-3'>
                         <h3 className='main-text title-form-2-block-3'>Required</h3>
-
                         <div className='input-container shadow'>
                             <input className='input-form-2-block-3'
                                    id='Required'
                                    type='text'
                                    name='Required'
-                                   value={formData.find((block) => block.id === "Block4")?.Required || ""}
-                                   onChange={(e) => inputChangeHandler("Block4", "Required", e.target.value)}
+                                   value={formData.find((block) => block.id === "Required")?.Required || ""}
+                                   onChange={(e) => inputChangeHandler("Required", "Required", e.target.value)}
                             />
                         </div>
 
@@ -274,8 +284,8 @@ export const MainBlock = () => {
                                    id='Commodity'
                                    type='text'
                                    name='Commodity'
-                                   value={formData.find((block) => block.id === "Block4")?.Commodity || ""}
-                                   onChange={(e) => inputChangeHandler("Block4", "Commodity", e.target.value)}
+                                   value={formData.find((block) => block.id === "Commodity")?.Commodity || ""}
+                                   onChange={(e) => inputChangeHandler("Commodity", "Commodity", e.target.value)}
                             />
                         </div>
                     </div>
@@ -284,7 +294,7 @@ export const MainBlock = () => {
 
             </div>
             <div className='block-btn-save shadow'>
-                <button className='btn-save' onClick={updateRpmAndCopy}>Save <BookmarkIcon className='btn-save-icon'/></button>
+                <button className='btn-save' onClick={copyToClipboard}>Save <BookmarkIcon className='btn-save-icon'/></button>
             </div>
         </div>
     );
