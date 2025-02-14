@@ -8,7 +8,7 @@ export const MainBlock = () => {
         inputChangeHandler,
         buttonClickHandler,
         formData,
-        copyToClipboard,
+        updateRpmAndCopy,
     } = UseMainBlock();
     console.log(formData)
 
@@ -190,25 +190,63 @@ export const MainBlock = () => {
                     <div className='form-block-3'>
                         <div className='input-group'>
                             <div className='input-container shadow'>
-                                <input className='input-form-block-3' placeholder="Total"/>
+                                <input className='input-form-block-3'
+                                       placeholder="Total"
+                                       id='Total'
+                                       type='number'
+                                       name='Total'
+                                       value={formData.find((block) => block.id === "Block3")?.Total || ""}
+                                       onChange={(e) => inputChangeHandler("Block3", "Total", e.target.value)}
+                                />
                             </div>
+
                             <div className='input-container shadow'>
-                                <input className='input-form-block-3' placeholder="Cost"/>
+                                <input className='input-form-block-3'
+                                       placeholder="Cost"
+                                       id='Cost'
+                                       type='number'
+                                       name='Cost'
+                                       value={formData.find((block) => block.id === "Block3")?.Cost || ""}
+                                       onChange={(e) => inputChangeHandler("Block3", "Cost", e.target.value)}
+                                />
                             </div>
                         </div>
 
                         <div className='input-group'>
                             <div className='input-container shadow'>
-                                <input className='input-form-block-3' placeholder="Dh"/>
+                                <input className='input-form-block-3'
+                                       placeholder="Dh"
+                                       id='Dh'
+                                       type='number'
+                                       name='Dh'
+                                       value={formData.find((block) => block.id === "Block3")?.Dh || ""}
+                                       onChange={(e) => inputChangeHandler("Block3", "Dh", e.target.value)}
+                                />
                             </div>
+
                             <div className='input-container shadow'>
-                                <input className='input-form-block-3' placeholder="Rpm"/>
+                                <input className='input-form-block-3'
+                                       placeholder="Rpm"
+                                       id='Rpm'
+                                       type='number'
+                                       name='Rpm'
+                                       value={formData.find((block) => block.id === "Block3")?.Rpm || ""}
+                                       onChange={(e) => inputChangeHandler("Block3", "Rpm", e.target.value)}
+
+                                />
                             </div>
                         </div>
 
                         <div className='input-group'>
                             <div className='input-container shadow'>
-                                <input className='input-form-block-3' placeholder="Temp"/>
+                                <input className='input-form-block-3'
+                                       placeholder="Temp"
+                                       id='Temp'
+                                       type='number'
+                                       name='Temp'
+                                       value={formData.find((block) => block.id === "Block3")?.Temp || ""}
+                                       onChange={(e) => inputChangeHandler("Block3", "Temp", e.target.value)}
+                                />
                             </div>
                         </div>
                     </div>
@@ -218,13 +256,27 @@ export const MainBlock = () => {
                 <form>
                     <div className='form-2-block-3'>
                         <h3 className='main-text title-form-2-block-3'>Required</h3>
+
                         <div className='input-container shadow'>
-                            <input className='input-form-2-block-3'/>
+                            <input className='input-form-2-block-3'
+                                   id='Required'
+                                   type='text'
+                                   name='Required'
+                                   value={formData.find((block) => block.id === "Block4")?.Required || ""}
+                                   onChange={(e) => inputChangeHandler("Block4", "Required", e.target.value)}
+                            />
                         </div>
 
                         <h3 className='main-text'>Commodity</h3>
+
                         <div className='input-container shadow'>
-                            <input className='input-form-2-block-3'/>
+                            <input className='input-form-2-block-3'
+                                   id='Commodity'
+                                   type='text'
+                                   name='Commodity'
+                                   value={formData.find((block) => block.id === "Block4")?.Commodity || ""}
+                                   onChange={(e) => inputChangeHandler("Block4", "Commodity", e.target.value)}
+                            />
                         </div>
                     </div>
                 </form>
@@ -232,7 +284,7 @@ export const MainBlock = () => {
 
             </div>
             <div className='block-btn-save shadow'>
-                <button className='btn-save' onClick={copyToClipboard}>Save <BookmarkIcon className='btn-save-icon'/></button>
+                <button className='btn-save' onClick={updateRpmAndCopy}>Save <BookmarkIcon className='btn-save-icon'/></button>
             </div>
         </div>
     );
