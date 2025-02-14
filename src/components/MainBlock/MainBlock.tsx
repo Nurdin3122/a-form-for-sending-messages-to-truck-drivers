@@ -1,0 +1,239 @@
+import silver from "../../assets/silver.jpg";
+import {BookmarkIcon, ClockIcon, PlusIcon} from "@heroicons/react/24/outline";
+import './MainBlock.css';
+import {UseMainBlock} from "./useMainBlock.ts";
+
+export const MainBlock = () => {
+    const {
+        inputChangeHandler,
+        buttonClickHandler,
+        formData,
+        copyToClipboard,
+    } = UseMainBlock();
+    console.log(formData)
+
+
+    return (
+        <div className='main-block'>
+            <div className='block-image'>
+                <img className='image-silver' src={silver} alt="silver"/>
+            </div>
+            <div className='block-1'>
+                <h2 className='main-text'>Pu</h2>
+                <div className='block-pu-de'>
+                    <button className='btn-plus'>
+                        <PlusIcon/>
+                    </button>
+                    <form className='form-pu-de' name="PU">
+                        <div className='input-container shadow'>
+                            <ClockIcon className='icon-time'/>
+                            <input className='input-time'
+                                   placeholder='00:00'
+                                   id='time1'
+                                   type='text'
+                                   name='time1'
+                                   value={formData.find((block) => block.id === "PU")?.time1 || ""}
+                                   onChange={(e) => inputChangeHandler("PU", "time1", e.target.value)}
+                            />
+                        </div>
+
+                        <div className='btn-container shadow'>
+                            <button className='btn-word'
+                                    id='btn1'
+                                    type='button'
+                                    name='btn1'
+                                    onClick={() => buttonClickHandler("PU", "btn1", "until")}
+                            >
+                                until
+                            </button>
+                        </div>
+
+                        <div className='input-container shadow'>
+                            <ClockIcon className='icon-time'/>
+                            <input className='input-time'
+                                   placeholder="00:00"
+                                   id='time2'
+                                   type='text'
+                                   name='time2'
+                                   value={formData.find((block) => block.id === "PU")?.time2 || ""}
+                                   onChange={(e) => inputChangeHandler("PU", "time2", e.target.value)}
+                            />
+                        </div>
+
+                        <div className='btn-container shadow'>
+                            <button className='btn-word'
+                                    id="btn2"
+                                    type="button"
+                                    name="btn2"
+                                    onClick={() => buttonClickHandler("PU", "btn2", "fefs")}
+                            >
+                                fefs
+                            </button>
+                        </div>
+
+                        <div className='btn-container shadow'>
+                            <button className='btn-word'
+                                    id="btn3"
+                                    type="button"
+                                    name="btn3"
+                                    onClick={() => buttonClickHandler("PU", "btn3", "appt")}
+                            >
+                                appt
+                            </button>
+                        </div>
+
+                        <label className='week-container shadow'>
+                            <select className="select-weekday"
+                                    name="week1"
+                                    value={formData.find((block) => block.id === "PU")?.week1 || ""}
+                                    onChange={(e) => inputChangeHandler("PU", "week1", e.target.value)}
+                            >
+                                <option value="">Choose a day</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                                <option value="sunday">Sunday</option>
+                            </select>
+                        </label>
+                    </form>
+                </div>
+            </div>
+            <div className='block-2'>
+                <h2 className='main-text'>DE</h2>
+                <div className='block-pu-de'>
+                    <button className='btn-plus'>
+                        <PlusIcon/>
+                    </button>
+                    <form className='form-pu-de' name="DE">
+
+                        <div className='input-container shadow'>
+                            <ClockIcon className='icon-time'/>
+                            <input className='input-time'
+                                   placeholder="00:00"
+                                   id='time3'
+                                   type='text'
+                                   name='time3'
+                                   value={formData.find((block) => block.id === "DE")?.time3 || ""}
+                                   onChange={(e) => inputChangeHandler("DE", "time3", e.target.value)}
+                            />
+                        </div>
+
+                        <div className='btn-container shadow'>
+                            <button className='btn-word'
+                                    id='btn4'
+                                    type='button'
+                                    name='btn4'
+                                    onClick={() => buttonClickHandler("DE", "btn4", "until")}
+                            >
+                                until
+                            </button>
+                        </div>
+
+                        <div className='input-container shadow'>
+                            <ClockIcon className='icon-time'/>
+                            <input className='input-time'
+                                   placeholder="00:00"
+                                   id='time4'
+                                   type='text'
+                                   name='time4'
+                                   value={formData.find((block) => block.id === "DE")?.time4 || ""}
+                                   onChange={(e) => inputChangeHandler("DE", "time4", e.target.value)}
+                            />
+                        </div>
+
+                        <div className='btn-container shadow'>
+                            <button className='btn-word'
+                                    id='btn5'
+                                    type='button'
+                                    name='btn5'
+                                    onClick={() => buttonClickHandler("DE", "btn5", "fefs")}
+                            >
+                                fefs
+                            </button>
+                        </div>
+
+                        <div className='btn-container shadow'>
+                            <button className='btn-word'
+                                    id='btn6'
+                                    type='button'
+                                    name='btn6'
+                                    onClick={() => buttonClickHandler("DE", "btn6", "appt")}
+                            >
+                                appt
+                            </button>
+                        </div>
+
+                        <div className='week-container shadow'>
+                            <select className="select-weekday"
+                                    name="week2"
+                                    value={formData.find((block) => block.id === "DE")?.week2 || ""}
+                                    onChange={(e) => inputChangeHandler("DE", "week2", e.target.value)}
+                            >
+                                <option value="">Choose a day</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                                <option value="sunday">Sunday</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div className='block-3'>
+                <form>
+                    <div className='form-block-3'>
+                        <div className='input-group'>
+                            <div className='input-container shadow'>
+                                <input className='input-form-block-3' placeholder="Total"/>
+                            </div>
+                            <div className='input-container shadow'>
+                                <input className='input-form-block-3' placeholder="Cost"/>
+                            </div>
+                        </div>
+
+                        <div className='input-group'>
+                            <div className='input-container shadow'>
+                                <input className='input-form-block-3' placeholder="Dh"/>
+                            </div>
+                            <div className='input-container shadow'>
+                                <input className='input-form-block-3' placeholder="Rpm"/>
+                            </div>
+                        </div>
+
+                        <div className='input-group'>
+                            <div className='input-container shadow'>
+                                <input className='input-form-block-3' placeholder="Temp"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+                <form>
+                    <div className='form-2-block-3'>
+                        <h3 className='main-text title-form-2-block-3'>Required</h3>
+                        <div className='input-container shadow'>
+                            <input className='input-form-2-block-3'/>
+                        </div>
+
+                        <h3 className='main-text'>Commodity</h3>
+                        <div className='input-container shadow'>
+                            <input className='input-form-2-block-3'/>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+            <div className='block-btn-save shadow'>
+                <button className='btn-save' onClick={copyToClipboard}>Save <BookmarkIcon className='btn-save-icon'/></button>
+            </div>
+        </div>
+    );
+};
