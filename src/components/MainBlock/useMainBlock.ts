@@ -27,14 +27,12 @@ export const UseMainBlock = () => {
     };
 
     const copyToClipboard = () => {
-        // Формируем текст для копирования
         const textToCopy = formData
             .map((block) => {
-                return Object.values(block).join(" | "); // Объединяем все значения через |
+                return Object.values(block).join(" | ");
             })
-            .join("\n"); // Разделяем блоки новой строкой
+            .join("\n");
 
-        // Копируем в буфер обмена
         navigator.clipboard.writeText(textToCopy)
             .then(() => alert("Скопировано!"))
             .catch((err) => console.error("Ошибка копирования:", err));
