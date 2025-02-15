@@ -66,9 +66,9 @@ export const MainBlock = () => {
                                     id="btn2"
                                     type="button"
                                     name="btn2"
-                                    onClick={() => buttonClickHandler("PU", "btn2", "fefs")}
+                                    onClick={() => buttonClickHandler("PU", "btn2", "FCFS")}
                             >
-                                fefs
+                                fcfs
                             </button>
                         </div>
 
@@ -150,9 +150,9 @@ export const MainBlock = () => {
                                     id='btn5'
                                     type='button'
                                     name='btn5'
-                                    onClick={() => buttonClickHandler("DE", "btn5", "fefs")}
+                                    onClick={() => buttonClickHandler("DE", "btn5", "FCFS")}
                             >
-                                fefs
+                                fcfs
                             </button>
                         </div>
 
@@ -200,7 +200,6 @@ export const MainBlock = () => {
                                        onChange={(e) => inputChangeHandler("DH", "Dh", e.target.value)}
                                 />
                             </div>
-
                             <div className='input-container shadow'>
                                 <input className='input-form-block-3'
                                        placeholder="Rpm"
@@ -212,7 +211,6 @@ export const MainBlock = () => {
 
                                 />
                             </div>
-
                             <div className='input-container shadow'>
                                 <input className='input-form-block-3'
                                        placeholder="Temp"
@@ -236,8 +234,6 @@ export const MainBlock = () => {
                                        onChange={(e) => inputChangeHandler("total", "Total", e.target.value)}
                                 />
                             </div>
-
-
                             <div className='input-container shadow'>
                                 <input className='input-form-block-3'
                                        placeholder="Cost"
@@ -278,7 +274,6 @@ export const MainBlock = () => {
                         </div>
 
                         <h3 className='main-text'>Commodity</h3>
-
                         <div className='input-container shadow'>
                             <input className='input-form-2-block-3'
                                    id='Commodity'
