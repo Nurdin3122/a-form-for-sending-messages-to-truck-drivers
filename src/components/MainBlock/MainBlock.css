@@ -164,6 +164,10 @@
     color: white;
 }
 
+.btn-calculate.active {
+    color: white;
+}
+
 .input-container {
     display: flex;
     align-items: center;
@@ -227,7 +231,9 @@
     cursor: pointer;
 }
 
-
+.btn-word.active {
+    color: white;
+}
 
 .week-container{
     display: flex;

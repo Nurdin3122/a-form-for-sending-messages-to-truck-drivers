@@ -5,8 +5,8 @@ import {FormDataItem} from "../../types.ts";
 
 export const UseMainBlock = () => {
     const [formData, setFormData] = useState<FormDataItem[]>([
-        { id: "PU", time1: "", btn1: "", time2: "", btn2: "", btn3: "", week1: "" },
-        { id: "DE", time3: "", btn4: "", time4: "", btn5: "", btn6: "", week2: "" },
+        { id: "PU", time1: "", btn1: "", time2: "", btn2: "", btn3: "", week1: "", activeBtn: "" },
+        { id: "DE", time3: "", btn4: "", time4: "", btn5: "", btn6: "", week2: "", activeBtn: "" },
         { id: "DH", Dh: 0,},
         { id: "total", Total: 0,},
         { id: "RPM", RPM: 0,},
@@ -15,6 +15,7 @@ export const UseMainBlock = () => {
         { id: "Required", Required: "",},
         {id: "Commodity", Commodity: "" },
     ]);
+    const [activeIcon, newActiveIcon] = useState<boolean>(false);
 
     const inputChangeHandler = (id: string, field: string, value: string | number) => {
         setFormData((prev) =>
@@ -27,7 +28,9 @@ export const UseMainBlock = () => {
     const buttonClickHandler = (id: string, field: string, value: string) => {
         setFormData((prev) =>
             prev.map((block) =>
-                block.id === id ? { ...block, [field]: value } : block
+                block.id === id
+                    ? { ...block, [field]: value, activeBtn: field }
+                    : block
             )
         );
     };
@@ -66,10 +69,9 @@ export const UseMainBlock = () => {
                         return "";
                 }
             })
-            .filter((line) => line.trim() !== "") // Убираем пустые строки
+            .filter((line) => line.trim() !== "")
             .join("\n");
     };
-
 
     const copyToClipboard = () => {
         const textToCopy = formatText();
@@ -78,7 +80,6 @@ export const UseMainBlock = () => {
             .then(() => alert("Скопировано!"))
             .catch((err) => console.error("Ошибка копирования:", err));
     };
-
 
     const updateRpmAndCopy = () => {
         setFormData((prev) =>
@@ -96,8 +97,8 @@ export const UseMainBlock = () => {
                 return block;
             })
         );
+        newActiveIcon(true);
     };
-
 
     return {
         inputChangeHandler,
@@ -105,5 +106,6 @@ export const UseMainBlock = () => {
         formData,
         copyToClipboard,
         updateRpmAndCopy,
+        activeIcon
     }
 };

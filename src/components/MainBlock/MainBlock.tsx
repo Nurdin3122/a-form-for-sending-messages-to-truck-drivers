@@ -10,9 +10,8 @@ export const MainBlock = () => {
         formData,
         updateRpmAndCopy,
         copyToClipboard,
+        activeIcon,
     } = UseMainBlock();
-    console.log(formData)
-
 
     return (
         <div className='main-block'>
@@ -39,11 +38,12 @@ export const MainBlock = () => {
                         </div>
 
                         <div className='btn-container shadow'>
-                            <button className='btn-word'
-                                    id='btn1'
-                                    type='button'
-                                    name='btn1'
-                                    onClick={() => buttonClickHandler("PU", "btn1", "until")}
+                            <button
+                                className={`btn-word ${formData.find((block) => block.id === "PU")?.activeBtn === "btn1" ? "active" : ""}`}
+                                id='btn1'
+                                type='button'
+                                name='btn1'
+                                onClick={() => buttonClickHandler("PU", "btn1", "until")}
                             >
                                 until
                             </button>
@@ -62,22 +62,24 @@ export const MainBlock = () => {
                         </div>
 
                         <div className='btn-container shadow'>
-                            <button className='btn-word'
-                                    id="btn2"
-                                    type="button"
-                                    name="btn2"
-                                    onClick={() => buttonClickHandler("PU", "btn2", "FCFS")}
+                            <button
+                                className={`btn-word ${formData.find((block) => block.id === "PU")?.activeBtn === "btn2" ? "active" : ""}`}
+                                id="btn2"
+                                type="button"
+                                name="btn2"
+                                onClick={() => buttonClickHandler("PU", "btn2", "FCFS")}
                             >
                                 fcfs
                             </button>
                         </div>
 
                         <div className='btn-container shadow'>
-                            <button className='btn-word'
-                                    id="btn3"
-                                    type="button"
-                                    name="btn3"
-                                    onClick={() => buttonClickHandler("PU", "btn3", "appt")}
+                            <button
+                                className={`btn-word ${formData.find((block) => block.id === "PU")?.activeBtn === "btn3" ? "active" : ""}`}
+                                id="btn3"
+                                type="button"
+                                name="btn3"
+                                onClick={() => buttonClickHandler("PU", "btn3", "appt")}
                             >
                                 appt
                             </button>
@@ -123,11 +125,12 @@ export const MainBlock = () => {
                         </div>
 
                         <div className='btn-container shadow'>
-                            <button className='btn-word'
-                                    id='btn4'
-                                    type='button'
-                                    name='btn4'
-                                    onClick={() => buttonClickHandler("DE", "btn4", "until")}
+                            <button
+                                className={`btn-word ${formData.find((block) => block.id === "DE")?.activeBtn === "btn4" ? "active" : ""}`}
+                                id='btn4'
+                                type='button'
+                                name='btn4'
+                                onClick={() => buttonClickHandler("DE", "btn4", "until")}
                             >
                                 until
                             </button>
@@ -146,22 +149,24 @@ export const MainBlock = () => {
                         </div>
 
                         <div className='btn-container shadow'>
-                            <button className='btn-word'
-                                    id='btn5'
-                                    type='button'
-                                    name='btn5'
-                                    onClick={() => buttonClickHandler("DE", "btn5", "FCFS")}
+                            <button
+                                className={`btn-word ${formData.find((block) => block.id === "DE")?.activeBtn === "btn5" ? "active" : ""}`}
+                                id='btn5'
+                                type='button'
+                                name='btn5'
+                                onClick={() => buttonClickHandler("DE", "btn5", "FCFS")}
                             >
                                 fcfs
                             </button>
                         </div>
 
                         <div className='btn-container shadow'>
-                            <button className='btn-word'
-                                    id='btn6'
-                                    type='button'
-                                    name='btn6'
-                                    onClick={() => buttonClickHandler("DE", "btn6", "appt")}
+                            <button
+                                className={`btn-word ${formData.find((block) => block.id === "DE")?.activeBtn === "btn6" ? "active" : ""}`}
+                                id='btn6'
+                                type='button'
+                                name='btn6'
+                                onClick={() => buttonClickHandler("DE", "btn6", "appt")}
                             >
                                 appt
                             </button>
@@ -247,7 +252,7 @@ export const MainBlock = () => {
                         </div>
 
                         <div className='block-btn-calculate'>
-                                <button className='btn-calculate'
+                                <button className={`btn-calculate ${activeIcon ? 'active' : ''}`}
                                         id='btn-cost'
                                         type='button'
                                         name='btn-cost'
